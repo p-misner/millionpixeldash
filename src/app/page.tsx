@@ -118,10 +118,12 @@ export default function Home() {
             ref={x == 0 ? startLineRef : x == 1000 ? endLineRef : null}
           >
             <p>
-              {x == 0 ? "[Start]" : ""} {x == 1000 ? "[End]" : ""} {x * 1000}px
+              <span>{x == 0 ? "[Start]" : ""} </span> {x == 1000 ? "[End]" : ""}{" "}
+              {x * 1000}px
             </p>
             <p>
-              {x * 1000}px {x == 0 ? "[Start]" : ""} {x == 1000 ? "[End]" : ""}
+              {x * 1000}px <span>{x == 0 ? "[Start]" : ""} </span>
+              {x == 1000 ? "[End]" : ""}
             </p>
           </StartLine>
         ))}
@@ -129,7 +131,7 @@ export default function Home() {
           <WinModal>
             <h1> Congratulations!</h1>
             <h2>
-              You scrolled 1,000,000 Pixels in {seconds.toFixed(1)} seconds!
+              You scrolled 1,000,000 pixels in {seconds.toFixed(1)} seconds!
             </h2>
             <ShareResultBtn
               id="shareresultsbtn"
@@ -170,6 +172,10 @@ export default function Home() {
               </ScrollAmount> */}
           </WinModal>
         )}
+        <Footer>
+          {" "}
+          Built by <a href="www.priyamisner.com">Priya Misner</a>, 2025
+        </Footer>
       </LongScrollWrapper>
     </div>
   );
@@ -245,13 +251,12 @@ const LongScrollWrapper = styled.div`
     background: linear-gradient(
       180deg,
       rgba(222, 247, 247, 1) 0%,
-      rgba(253, 236, 45, 1) 25%,
-      rgba(45, 253, 147, 1) 50%,
-      rgba(45, 116, 253, 1) 75%,
-      rgba(18, 51, 113, 1) 100%
+      rgba(253, 236, 45, 1) 33%,
+      rgba(45, 253, 147, 1) 66%,
+      rgb(45, 116, 253) 100%
     );
   }
-  height: 1002000px;
+  height: 1001000px;
 `;
 
 const ScrollAmount = styled.div`
@@ -277,7 +282,6 @@ const ScrollScore = styled.div`
   left: 24px;
   text-align: center;
   position: sticky;
-  /* background-color: red; */
   h2 {
     font-size: 24px;
     font-weight: 300;
@@ -298,6 +302,20 @@ const ScrollPlayer = styled.div`
   margin: 0 auto;
   margin-top: 108px;
 `;
+
+const bounce = keyframes`
+  0% {
+   font-weight: 400;
+  }
+  50% {
+    font-weight: 800;
+
+  }
+  100% {
+    font-weight: 400;
+
+  }
+`;
 const StartLine = styled.div<{ amount: number }>`
   position: absolute;
   display: flex;
@@ -310,6 +328,10 @@ const StartLine = styled.div<{ amount: number }>`
   p {
     font-size: 16px;
     margin-top: -12px;
+  }
+  span {
+    display: inline-block;
+    animation: 4s ${bounce} linear infinite;
   }
 `;
 const rotate = keyframes`
@@ -345,8 +367,7 @@ const WinModal = styled.div`
     linear-gradient(
         var(--angle),
         rgba(45, 253, 147, 1) 0%,
-        rgba(45, 116, 253, 1) 15%,
-        rgba(18, 51, 113, 1) 20%
+        rgba(45, 116, 253, 1) 15%
       )
       border-box;
   animation: 8s ${rotate} linear infinite;
@@ -409,4 +430,15 @@ const CopiedText = styled.div<{ reveal: boolean }>`
     props.reveal
       ? " opacity 0.2s linear"
       : "visibility 0s 2s, opacity 2s linear"};
+`;
+
+const Footer = styled.div`
+  a {
+    color: black;
+  }
+  text-align: center;
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `;
