@@ -132,6 +132,7 @@ export default function Home() {
               You scrolled 1,000,000 Pixels in {seconds.toFixed(1)} seconds!
             </h2>
             <ShareResultBtn
+              id="shareresultsbtn"
               onClick={() => {
                 setRevealCopy(true);
                 const copyString: string = `Million Pixel Dash // ${seconds.toFixed(
