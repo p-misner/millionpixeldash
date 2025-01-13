@@ -256,7 +256,7 @@ const LongScrollWrapper = styled.div`
       rgb(45, 116, 253) 100%
     );
   }
-  height: 1001000px;
+  height: 1002000px;
 `;
 
 const ScrollAmount = styled.div`
