@@ -139,7 +139,7 @@ export default function Home() {
                 setRevealCopy(true);
                 const copyString: string = `Million Pixel Dash // ${seconds.toFixed(
                   1
-                )} seconds\n\n🏃‍♂️⬜️⬜️🟨🟨🟩🟩🟦🟦💨\n\nsee if you can beat my time: https://blog.priyamisner.com/projects/onemillion`;
+                )} seconds\n\n🏃‍♂️⬜️⬜️🟨🟨🟩🟩🟦🟦💨\n\nsee if you can beat my time: millionpixeldash.com`;
 
                 copyToClipboard(copyString);
                 setTimeout(() => {
