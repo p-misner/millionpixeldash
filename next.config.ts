@@ -4,9 +4,9 @@ const nextConfig: NextConfig = {
   output: "export", // <=== enables static exports
   reactStrictMode: true,
   // basePath: "/",
-  // compiler: {
-  //   styledComponents: true,
-  // },
+  compiler: {
+    styledComponents: true,
+  },
 };
 
 export default nextConfig;
