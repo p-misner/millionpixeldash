@@ -174,7 +174,7 @@ export default function Home() {
         )}
         <Footer>
           {" "}
-          Built by <a href="www.priyamisner.com">Priya Misner</a>, 2025
+          Built by <a href="https://www.priyamisner.com">Priya Misner</a>, 2025
         </Footer>
       </LongScrollWrapper>
     </div>
